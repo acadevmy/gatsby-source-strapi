@@ -10,7 +10,7 @@ const extractImage = async (image, ctx) => {
   let fileNodeID;
 
   // using field on the cache key for multiple image field
-  const mediaDataCacheKey = `strapi-media-${image.id}`;
+  const mediaDataCacheKey = `strapi-media-${image.id}-${image.hash}`;
   const cacheMediaData = await cache.get(mediaDataCacheKey);
 
   // If we have cached media data and it wasn't modified, reuse
